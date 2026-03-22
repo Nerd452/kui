@@ -31,4 +31,11 @@ void kui_draw_vertical_line(int column1,int row1,int row2);
  * to draw a box with 
  */
 void kui_draw_box(int top_left,int top_right,int bottom_left,int bottom_right);
+
+
+void kui_draw_double_horizontal_line(int row,int column1,int column2);
+
+void kui_draw_double_vertical_line(int column,int row1,int row2);
+
+void kui_draw_double_line_box(int top_left_row,int top_left_column,int bottom_right_row,int bottom_right_column);
 #endif
