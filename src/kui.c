@@ -115,3 +115,44 @@ void kui_draw_double_line_box(int top_left_row,int top_left_column,int bottom_ri
 
     kui_say(bottom_right_row,bottom_right_column,"\u255d");
 }
+void kui_set_foreground_color(char *color)
+{
+    if(strcmp(color,"black")==0) printf("\033[30m");
+    else if(strcmp(color,"red")==0) printf("\033[31m");
+    else if(strcmp(color,"green")==0) printf("\033[32m");
+    else if(strcmp(color,"yellow")==0) printf("\033[33m");
+    else if(strcmp(color,"blue")==0) printf("\033[34m");
+    else if(strcmp(color,"magenta")==0) printf("\033[35m");
+    else if(strcmp(color,"cyan")==0) printf("\033[36m");
+    else if(strcmp(color,"white")==0) printf("\033[37m");
+}
+
+void kui_set_background_color(char *color)
+{
+    if(strcmp(color,"black")==0) printf("\033[40m");
+    else if(strcmp(color,"red")==0) printf("\033[41m");
+    else if(strcmp(color,"green")==0) printf("\033[42m");
+    else if(strcmp(color,"yellow")==0) printf("\033[43m");
+    else if(strcmp(color,"blue")==0) printf("\033[44m");
+    else if(strcmp(color,"magenta")==0) printf("\033[45m");
+    else if(strcmp(color,"cyan")==0) printf("\033[46m");
+    else if(strcmp(color,"white")==0) printf("\033[47m");
+}
+void kui_set_color(char *foreground_color,char *background_color)
+{
+    kui_set_foreground_color(foreground_color);
+    kui_set_background_color(background_color);
+}
+
+void kui_remove_background_color()
+{
+    printf("\033[49m");
+}
+void kui_remove_foreground_color()
+{
+    printf("\033[39m");
+}
+void kui_remove_color()
+{
+    printf("\033[0m");
+}
