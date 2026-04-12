@@ -30,6 +30,18 @@ void kui_say(int row,int column,char *str)
 }
 
 /**
+ * to pint a char at a given location
+ */
+void kui_say_char(int row,int column,char m)
+{
+    char str[2];
+    str[0]=m;
+    str[1]='\0';
+    kui_go_to_xy(row,column);
+    write(fileno(stdout),str,1);
+}
+
+/**
  * to draw a horizontal line, in a perticular row from column1 to column2 
  */
 void kui_draw_horizontal_line(int row,int column1,int column2)
